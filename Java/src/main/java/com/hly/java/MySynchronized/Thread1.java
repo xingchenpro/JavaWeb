@@ -1,4 +1,4 @@
-package com.hly.java.mySynchronized;
+package com.hly.java.MySynchronized;
 
 /**
  * @author :hly
