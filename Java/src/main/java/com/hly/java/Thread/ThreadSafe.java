@@ -1,4 +1,4 @@
-package com.hly.java.MyThread;
+package com.hly.java.Thread;
 
 /**
  * @author :hly

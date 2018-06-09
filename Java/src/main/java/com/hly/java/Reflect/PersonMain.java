@@ -9,9 +9,8 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class PersonMain {
     public static void main(String[] arv) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Person person = new Person();
         //返回一个类型为Class的对象
-        Class per = person.getClass();
+        Class per = new Person().getClass();
         System.out.println("得到该类的包名:" + per.getPackage());//得到该类的包名
         System.out.println("得到该类的名称:" + per.getName());
         System.out.println("得到该类继承的类:" + per.getSuperclass());
