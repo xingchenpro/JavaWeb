@@ -1,12 +1,13 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Java:war exploded">
-    <output-path>$PROJECT_DIR$/Java/target/Java</output-path>
+  <artifact type="exploded-war" name="Servlet:war exploded">
+    <output-path>$PROJECT_DIR$/Servlet/target/Servlet</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Java" />
+          <element id="module-output" name="Servlet" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.0.1" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.2.4.RELEASE" />
@@ -42,9 +43,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/Java/target/Java/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/Servlet/target/Servlet/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Java/web/Web" />
+      <element id="javaee-facet-resources" facet="Servlet/web/Web" />
     </root>
   </artifact>
 </component>

@@ -6,14 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Hadoop" />
         <module name="Java" />
         <module name="Netty" />
+        <module name="Servlet" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Hadoop" target="1.7" />
       <module name="Java" target="1.7" />
       <module name="JavaFramework" target="1.7" />
       <module name="Netty" target="1.7" />
+      <module name="Servlet" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

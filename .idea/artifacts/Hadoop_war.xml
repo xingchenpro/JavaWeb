@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Hadoop:war">
+    <output-path>$PROJECT_DIR$/Hadoop/target</output-path>
+    <root id="archive" name="Hadoop.war">
+      <element id="artifact" artifact-name="Hadoop:war exploded" />
+    </root>
+  </artifact>
+</component>
