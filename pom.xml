@@ -112,6 +112,13 @@
       <scope>provided</scope> <!-- 编译时不需要发布,否则在集成maven的tomcat插件会出现错误 -->
     </dependency>
 
+    <!-- 添加连接池druid支持 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.0.16</version>
+    </dependency>
+
     <!-- 添加log4j日志 -->
     <!--<dependency>
       <groupId>log4j</groupId>

@@ -25,6 +25,7 @@
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.6" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.3" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.16" />
           <element id="library" level="project" name="Maven: net.sourceforge.jtds:jtds:1.2.4" />
           <element id="library" level="project" name="Maven: com.microsoft.sqlserver:sqljdbc4:4.0" />
           <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
