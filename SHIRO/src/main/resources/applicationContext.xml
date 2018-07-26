@@ -19,11 +19,13 @@
         <property name="username" value="root"/>
         <property name="password" value="roof"/>
     </bean>
+
+
     <!--mybatis-sqlSessionFactory-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!--自动扫描mapper文件-->
-        <property name="mapperLocations" value="classpath:com/hly/shiro/mappers/*.xml"/>
+        <property name="mapperLocations" value="classpath:com/hly/shiro/mappers/UserMapper.xml"/>
         <!--mybatis文件-->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
@@ -34,5 +36,5 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
-
+    <context:component-scan base-package="com.hly.shiro.service" />
 </beans>
