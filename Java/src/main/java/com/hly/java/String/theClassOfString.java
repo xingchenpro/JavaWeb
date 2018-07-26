@@ -1,5 +1,7 @@
 package com.hly.java.String;
 
+import java.util.Date;
+
 /**
  * @author :hly
  * @github :github.com/SiriusHly
@@ -31,6 +33,7 @@ public class theClassOfString {
         String s1 = new String("l");
         String s2 = new String("y");
         String s3 = s1 + s2;
+        s1.concat(s2);
     }
 
     /**
@@ -101,7 +104,7 @@ public class theClassOfString {
      * 比价字符串是否相等
      */
 
-    public void compareString() {
+    public void equalString() {
         String str = "I am hly";
         String str2 = "I am engineer";
         //区分大小写
@@ -110,9 +113,57 @@ public class theClassOfString {
         str.equalsIgnoreCase(str2);
     }
 
+    /**
+     * 按字典顺序比较各个字符的Unicode
+     */
+
+    public void compareString() {
+        String str = "abc";
+        String str2 = "aac";
+        //每一个字符一次比较，相同就往后推，遇到不同的，前面的一个字符减后面的一个字符，str的减str2的；
+        str.compareTo(str2);
+        System.out.println(str.compareTo(str2));
+    }
+
+    /**
+     * 字符串大小写转换
+     */
+
+    public void toggleCase() {
+        String str = "I am hly";
+        //转化为小写
+        str.toLowerCase();
+        //转化为大写
+        str.toUpperCase();
+    }
+
+    /**
+     * 字符串分割
+     */
+
+    public void splitString() {
+        String str = "I am hly";
+        //根据给定的分割符进行分割
+        str.split(" ");
+        //限定分割的次数
+        str.split(" ", 1);
+    }
+
+    /**
+     *格式化字符串
+     */
+
+    public void formatString() {
+        Date date = new Date();
+        String form = String.format("%tF",date);
+        //格式化十六进制
+        String hexadecimal = String.format("%x",200);
+    }
+
 
     public static void main(String[] args) {
-        System.out.println("");
+        theClassOfString theClassOfString = new theClassOfString();
+        theClassOfString.compareString();
     }
 
 
