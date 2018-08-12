@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/Hadoop/Hadoop.iml" filepath="$PROJECT_DIR$/Hadoop/Hadoop.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java/Java.iml" filepath="$PROJECT_DIR$/Java/Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaFramework.iml" filepath="$PROJECT_DIR$/JavaFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyJSP/MyJSP.iml" filepath="$PROJECT_DIR$/MyJSP/MyJSP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyJSTL/MyJSTL.iml" filepath="$PROJECT_DIR$/MyJSTL/MyJSTL.iml" />
       <module fileurl="file://$PROJECT_DIR$/Netty/Netty.iml" filepath="$PROJECT_DIR$/Netty/Netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/SHIRO/SHIRO.iml" filepath="$PROJECT_DIR$/SHIRO/SHIRO.iml" />
       <module fileurl="file://$PROJECT_DIR$/Servlet/Servlet.iml" filepath="$PROJECT_DIR$/Servlet/Servlet.iml" />

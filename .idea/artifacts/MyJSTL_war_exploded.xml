@@ -1,15 +1,15 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Hadoop:war exploded">
-    <output-path>$PROJECT_DIR$/Hadoop/target/Hadoop</output-path>
+  <artifact type="exploded-war" name="MyJSTL:war exploded">
+    <output-path>$PROJECT_DIR$/MyJSTL/target/MyJSTL</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Hadoop" />
+          <element id="module-output" name="MyJSTL" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" />
-          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.2.4.RELEASE" />
@@ -63,9 +63,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/Hadoop/target/Hadoop/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/MyJSTL/target/MyJSTL/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Hadoop/web/Web" />
+      <element id="javaee-facet-resources" facet="MyJSTL/web/Web" />
     </root>
   </artifact>
 </component>

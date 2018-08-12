@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Hadoop" />
         <module name="Java" />
+        <module name="MyJSP" />
+        <module name="MyJSTL" />
         <module name="Netty" />
         <module name="Servlet" />
         <module name="SHIRO" />
@@ -17,9 +19,14 @@
       <module name="Hadoop" target="1.7" />
       <module name="Java" target="1.7" />
       <module name="JavaFramework" target="1.7" />
+      <module name="JSP" target="1.7" />
+      <module name="JSTL" target="1.7" />
+      <module name="MyJSP" target="1.7" />
+      <module name="MyJSTL" target="1.7" />
       <module name="Netty" target="1.7" />
       <module name="Servlet" target="1.7" />
       <module name="SHIRO" target="1.7" />
+      <module name="t" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

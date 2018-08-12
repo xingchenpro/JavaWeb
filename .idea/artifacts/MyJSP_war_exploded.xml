@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Hadoop:war exploded">
-    <output-path>$PROJECT_DIR$/Hadoop/target/Hadoop</output-path>
+  <artifact type="exploded-war" name="MyJSP:war exploded">
+    <output-path>$PROJECT_DIR$/MyJSP/target/MyJSP</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Hadoop" />
+          <element id="module-output" name="MyJSP" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
@@ -63,9 +63,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/Hadoop/target/Hadoop/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/MyJSP/target/MyJSP/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Hadoop/web/Web" />
+      <element id="javaee-facet-resources" facet="MyJSP/web/Web" />
     </root>
   </artifact>
 </component>
