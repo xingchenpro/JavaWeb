@@ -28,7 +28,6 @@ private int destroy;
         System.out.println("销毁了"+destroy+"次");
     }
 %>
-
 <%
     service++;
     System.out.println("响应了"+service+"次请求");
