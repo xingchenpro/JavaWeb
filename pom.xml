@@ -15,6 +15,7 @@
 
     <module>MyJSTL</module>
     <module>MyJSP</module>
+      <module>JSP</module>
 
   </modules>
   <packaging>pom</packaging>
