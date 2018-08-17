@@ -13,16 +13,17 @@ import java.io.PrintWriter;
  * @blog :blog.csdn.net/Sirius_hly
  * @date :2018/8/17
  */
-@WebServlet("/ServletFilter")
+
+@WebServlet(value = "/ServletFilter")
 public class ServletFilter extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //相应内容类型
+        System.out.println("ServletFilter过滤器");
         response.setContentType("text/html;charset=UTF-8");
 
         PrintWriter out = response.getWriter();
         out.print("123");
     }
-
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException {
         doGet(request,response);
     }
