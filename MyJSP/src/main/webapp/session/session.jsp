@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: hly
@@ -11,28 +10,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.io.*,java.util.*" %>
 <%
-    Date createTime = new Date(session.getCreationTime());
-    Date lastTime = new Date(session.getLastAccessedTime());
     String userId = request.getParameter("userId");
-    Integer visitNum = 0;
-
-
-    if(session.isNew()){
-        session.setAttribute("visitNum",visitNum);
-    }
-    else{
-        /*未解决报错*/
-        visitNum = (Integer) session.getAttribute("visitNum");
-        visitNum+=1;
-        session.setAttribute("visitNum",visitNum);
-    }
+    Integer visitNum = (Integer) session.getAttribute("visitNum");
 %>
 <html>
 <head>
     <title>session</title>
 </head>
 <body>
-欢迎<%=userId%>第<%=visitNum%>次访问！
-
+欢迎<%=userId%>第<%=visitNum%>次访问!
 </body>
 </html>
