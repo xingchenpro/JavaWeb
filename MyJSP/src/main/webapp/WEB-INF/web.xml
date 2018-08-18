@@ -2,7 +2,7 @@
 <web-app>
 <display-name>Archetype Created Web Application</display-name>
 
-    <filter>
+    <!--<filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>com.hly.jsp.filter.LoginFilter</filter-class>
         <init-param>
@@ -10,13 +10,13 @@
             <param-value>hly</param-value>
         </init-param>
     </filter>
-    <!--一个过滤器对应一个映射-->
+    &lt;!&ndash;一个过滤器对应一个映射&ndash;&gt;
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!--所拦截的Servlet-->
+    &lt;!&ndash;所拦截的Servlet&ndash;&gt;
     <servlet>
         <servlet-name>ServletFilter</servlet-name>
         <servlet-class>com.hly.jsp.filter.ServletFilter</servlet-class>
@@ -24,9 +24,12 @@
 
     <servlet-mapping>
         <servlet-name>ServletFilter</servlet-name>
-        <!--访问的Servlet类的地址-->
+        &lt;!&ndash;访问的Servlet类的地址&ndash;&gt;
         <url-pattern>/ServletFilter</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
+
+
+
 
 
 </web-app>
