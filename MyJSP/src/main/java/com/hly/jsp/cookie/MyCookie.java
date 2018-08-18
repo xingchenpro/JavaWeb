@@ -19,15 +19,20 @@ public class MyCookie extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String user = request.getParameter("user");
-        String password = request.getParameter("password");
-        System.out.println(user+" "+password);
-        Cookie cookie = new Cookie("message","message");
-        cookie.setMaxAge(60*60);
-        response.addCookie(cookie);
-        PrintWriter out = response.getWriter();
-        out.print("success");
+        String userId = request.getParameter("userId");
+        String userPassword = request.getParameter("userPassword");
+        System.out.println(userId+" "+userPassword);
+        /*创建cookie对象*/
+        Cookie  id= new Cookie("id",userId);
+        Cookie password = new Cookie("pw",userPassword);
+        id.setMaxAge(60);
+        password.setMaxAge(60);
+       /*添加cookie*/
+        response.addCookie(id);
+        response.addCookie(password);
 
+        PrintWriter out = response.getWriter();
+        out.println("success");
 
     }
 
