@@ -1,4 +1,4 @@
-package com.hly.jsp;
+package com.hly.jsp.bean;
 
 /**
  * @author :hly
