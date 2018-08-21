@@ -18,14 +18,14 @@
 
     &lt;!&ndash;所拦截的Servlet&ndash;&gt;
     <servlet>
-        <servlet-name>ServletFilter</servlet-name>
-        <servlet-class>com.hly.jsp.filter.ServletFilter</servlet-class>
+        <servlet-name>MyHttpServlet</servlet-name>
+        <servlet-class>com.hly.jsp.filter.MyHttpServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>ServletFilter</servlet-name>
+        <servlet-name>MyHttpServlet</servlet-name>
         &lt;!&ndash;访问的Servlet类的地址&ndash;&gt;
-        <url-pattern>/ServletFilter</url-pattern>
+        <url-pattern>/MyHttpServlet</url-pattern>
     </servlet-mapping>-->
 
 

@@ -14,8 +14,8 @@ import java.io.PrintWriter;
  * @date :2018/8/17
  */
 
-//@WebServlet(value = "/ServletFilter")
-public class ServletFilter extends HttpServlet {
+@WebServlet(value = "/MyHttpServlet")
+public class MyHttpServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //相应内容类型
         System.out.println("ServletFilter过滤器");
