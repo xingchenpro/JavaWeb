@@ -25,13 +25,18 @@ import java.util.List;
 @WebServlet("/fileUpload")
 public class FileUpload extends HttpServlet {
 
-    private static final int MEMORY_SIDE = 1024 * 1024 * 5;
-    private static final int MAX_MEMORY_SIDE = 1024 * 1024 * 10;
-    private static final int MAX_REQUEST_MEMORY_SIDE = 1024 * 1024 * 20;
-
+    //临界值，超过临界值，上传过程中会存到临时目录
+    private static final int BOUNDARY_MEMORY_SIDE = 1024 * 1024 * 10;
+    //文件最大值
+    private static final int MAX_MEMORY_SIDE = 1024 * 1024 * 300;
+    //请求值
+    private static final int MAX_REQUEST_MEMORY_SIDE = 1024 * 1024 * 1000;
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        //判断普通表单还是文件上传表单，enctype属性是否是"multipart/form-data"。
         if (!ServletFileUpload.isMultipartContent(request)) {
+            System.out.println("不是多媒体上传");
             PrintWriter out = response.getWriter();
             out.println("不是多媒体上传");
             out.flush();
@@ -40,38 +45,39 @@ public class FileUpload extends HttpServlet {
 
         //配置上传参数
         DiskFileItemFactory factory = new DiskFileItemFactory();
-        //设置临界值超过部分存在临时目录
-        factory.setSizeThreshold(MEMORY_SIDE);
-        //设置临时存储目录,https://www.cnblogs.com/nbjin/p/7392541.html
-        factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
+        //设置临界值,超过部分存在临时目录
+        factory.setSizeThreshold(BOUNDARY_MEMORY_SIDE);
+        //设置临时存储目录,上传过程中超过大小存到临时目录中，也可以设置成系统临时存储目录，https://www.cnblogs.com/nbjin/p/7392541.html
+        File tempFile = new File("d:/FileUploadTemp");
+        if(!tempFile.exists())
+            tempFile.mkdirs();
+        factory.setRepository(tempFile);
 
         ServletFileUpload upload = new ServletFileUpload(factory);
-        //设置文件最大上传值
-        upload.setFileSizeMax(MEMORY_SIDE);
-        //设置文件最大请求值
-        upload.setSizeMax(MAX_REQUEST_MEMORY_SIDE);
         //编码
         upload.setHeaderEncoding("UTF-8");
+        //设置文件最大上传值
+        upload.setFileSizeMax(MAX_MEMORY_SIDE);
+        //设置文件最大请求值,包括所有form
+        upload.setSizeMax(MAX_REQUEST_MEMORY_SIDE);
+
         //设置相对路径
         String path = getServletContext().getRealPath("/") + File.separator + "uploadFile";
-
         File uploadDir = new File(path);
         if (!uploadDir.exists()) {
             uploadDir.mkdirs();
         }
 
-
         try {
             //解析请求内容获取文件数据
-            @SuppressWarnings("unchecked")
             List<FileItem> fileItems = upload.parseRequest(request);
 
             if (fileItems != null && fileItems.size() > 0) {
                 for (FileItem item : fileItems) {
-                    //不在表单中的字段
+                    //判断是否为普通类型，否则为file类型
                     if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        System.out.println("fileName:"+fileName);
+                        //得到前端的name
+                        String fileName = item.getName();
                         String filePath = path + File.separator + fileName;
                         File storeFile = new File(filePath);
                         System.out.println("上传路径为:" + filePath);
