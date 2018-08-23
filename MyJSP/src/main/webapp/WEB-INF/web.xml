@@ -2,7 +2,8 @@
 <web-app>
 <display-name>Archetype Created Web Application</display-name>
 
-    <!--<filter>
+    <!-- filter-mapping 元素的顺序决定了 Web 容器应用过滤器到 Servlet 的顺序。-->
+    <filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>com.hly.jsp.filter.LoginFilter</filter-class>
         <init-param>
@@ -10,25 +11,27 @@
             <param-value>hly</param-value>
         </init-param>
     </filter>
-    &lt;!&ndash;一个过滤器对应一个映射&ndash;&gt;
+
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/MyServlet</url-pattern>
     </filter-mapping>
 
-    &lt;!&ndash;所拦截的Servlet&ndash;&gt;
-    <servlet>
+   <!-- <servlet>
         <servlet-name>MyHttpServlet</servlet-name>
-        <servlet-class>com.hly.jsp.filter.MyHttpServlet</servlet-class>
+        <servlet-class>com.hly.jsp.servlet.MyHttpServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>MyHttpServlet</servlet-name>
-        &lt;!&ndash;访问的Servlet类的地址&ndash;&gt;
+
         <url-pattern>/MyHttpServlet</url-pattern>
     </servlet-mapping>-->
 
-
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErrorPage</location>
+    </error-page>
 
 
 

@@ -84,9 +84,12 @@ public class FileUpload extends HttpServlet {
                         //保存文件到硬盘
                         item.write(storeFile);
                         request.setAttribute("message", "上传成功");
+                        request.setAttribute();
 
                     }
                 }
+            }else{
+                request.setAttribute("message", "上传失败");
             }
 
         } catch (FileUploadException e) {
@@ -94,8 +97,8 @@ public class FileUpload extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        getServletContext().getRequestDispatcher("/file/message.jsp").forward(request, response);
-
+        getServletContext().getRequestDispatcher("/file/fileUpload.jsp").forward(request, response);
+        System.out.println("上传成功");
     }
 
 }

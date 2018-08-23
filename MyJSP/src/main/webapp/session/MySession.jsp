@@ -28,7 +28,7 @@
     <title>mySession</title>
 </head>
 <body>
-<form action="session.jsp" method="get">
+<form action="/MySession" method="get">
     <input type="text" placeholder="userId" name="userId">
     <input type="submit" value="提交">
 </form>

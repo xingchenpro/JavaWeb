@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.io.*,java.util.*" %>
 <%
-    String userId = request.getParameter("userId");
+    String userId = (String) session.getAttribute("userId");
     Integer visitNum = (Integer) session.getAttribute("visitNum");
 %>
 <html>

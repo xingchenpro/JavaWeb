@@ -1,4 +1,4 @@
-package com.hly.jsp.filter;
+package com.hly.jsp.servlet;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

@@ -1,5 +1,6 @@
 package com.hly.jsp.cookie;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,7 @@ import java.io.PrintWriter;
 @WebServlet("/MyCookie")
 public class MyCookie extends HttpServlet {
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         String userId = request.getParameter("userId");
         String userPassword = request.getParameter("userPassword");
@@ -30,13 +31,13 @@ public class MyCookie extends HttpServlet {
        /*添加cookie*/
         response.addCookie(id);
         response.addCookie(password);
-
         PrintWriter out = response.getWriter();
         out.println("success");
+        getServletContext().getRequestDispatcher("/cookie/cookie.jsp").forward(request,response);
 
     }
 
-    public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
         doGet(request,response);
     }
 
