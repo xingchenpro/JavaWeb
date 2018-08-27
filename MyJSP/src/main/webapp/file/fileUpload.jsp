@@ -19,6 +19,10 @@
     <input type="submit" value="上传">
 </form>
 ${message}
+<a href="/FileDownload?fileName=${fileName}" rel="nofollow">${fileName}</a>
+<%--https://www.baidu.com/s?wd=nofollow%E6%A0%87%E7%AD%BE&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao--%>
+<%--nofollow不要追踪此特定链接--%>
+
 <%--
 <script>
     var message;
