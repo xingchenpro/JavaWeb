@@ -1,13 +1,23 @@
 package com.hly.shiro.service;
 
+
 import com.hly.shiro.entity.User;
-import org.springframework.stereotype.Service;
 
 /**
  * @author :hly
- * @date :2018/6/21
+ * @github :github.com/SiriusHly
+ * @blog :blog.csdn.net/Sirius_hly
+ * @date :2018/8/30
  */
 
 public interface UserService {
-    public User findUser(String username);
+
+    /**
+     * 查询用户
+     * @param userId
+     * @return
+     */
+    public User getUserById(String userId);
+
+
 }

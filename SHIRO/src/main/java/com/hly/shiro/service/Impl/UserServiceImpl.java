@@ -1,5 +1,4 @@
-package com.hly.shiro.service.serviceImpl;
-
+package com.hly.shiro.service.Impl;
 import com.hly.shiro.dao.UserDao;
 import com.hly.shiro.entity.User;
 import com.hly.shiro.service.UserService;
@@ -8,15 +7,18 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author :hly
- * @date :2018/6/21
+ * @github :github.com/SiriusHly
+ * @blog :blog.csdn.net/Sirius_hly
+ * @date :2018/8/30
  */
-@Service
-public class UserServiceImpl implements UserService{
+@Service(value = "UserService")
+public class UserServiceImpl implements UserService {
+
     @Autowired
     public UserDao userDao;
 
     @Override
-    public User findUser(String username) {
-        return userDao.findUser(username);
+    public User getUserById(String userId) {
+        return userDao.getUserById(userId);
     }
 }

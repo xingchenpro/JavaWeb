@@ -6,6 +6,26 @@
          version="3.0">
   <display-name>Archetype Created Web Application</display-name>
 
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- shiro过滤器定义 -->
+  <filter>
+    <filter-name>shiroFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    <init-param>
+      <!-- 该值缺省为false,表示生命周期由SpringApplicationContext管理,设置为true则表示由ServletContainer管理??写错了吧？？ -->
+      <param-name>targetFilterLifecycle</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>shiroFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
   <!--Spring配置文件-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
@@ -16,8 +36,6 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-
-  <!--springMVC的支持-->
 
   <servlet>
     <servlet-name>springMVC</servlet-name>
@@ -36,11 +54,6 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
-  <!--<servlet-mapping>
-    <servlet-name>springMVC</servlet-name>
-    <url-pattern>*.html</url-pattern>
-  </servlet-mapping>-->
-
   <!--编码过滤器-->
   <filter>
     <filter-name>edcodingFilter</filter-name>
@@ -57,22 +70,4 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
-  <!--shiro过滤器-->
-  <!--<filter>
-    <filter-name>shiroFilter</filter-name>
-    &lt;!&ndash;https://www.cnblogs.com/zhanhaitao/p/7857245.html&ndash;&gt;
-    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-    <init-param>
-      &lt;!&ndash;https://blog.csdn.net/u013378306/article/details/50801001&ndash;&gt;
-      &lt;!&ndash;先filter中加入DelegatingFilterProxy类，"targetFilterLifecycle"指明作用于filter的所有生命周期。
- 原理是，DelegatingFilterProxy类是一个代理类，所有的请求都会首先发到这个filter代理，然后再按照"filter-name"委派到spring中的这个bean。&ndash;&gt;
-      <param-name>targetFilterLifecycle</param-name>
-      <param-value>true</param-value>
-    </init-param>
-  </filter>
-
-  <filter-mapping>
-    <filter-name>shiroFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>-->
 </web-app>

@@ -3,8 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-   <!--别名-->
+    <!-- 别名,默认为实体类名 -->
     <typeAliases>
         <package name="com.hly.shiro.entity"/>
     </typeAliases>
+
 </configuration>
