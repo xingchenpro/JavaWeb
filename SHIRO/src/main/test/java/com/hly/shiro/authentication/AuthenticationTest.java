@@ -31,7 +31,6 @@ public class AuthenticationTest {
         Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro/authentication/shiro.ini");
         //2.获取SecurityManager绑定到SecurityUtils，全局设置，设置一次即可
         SecurityManager securityManager = factory.getInstance();
-
         SecurityUtils.setSecurityManager(securityManager);
         //3.得到Subject绑定到当前线程
         Subject subject = SecurityUtils.getSubject();

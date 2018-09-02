@@ -18,7 +18,6 @@ public class MyRealm1 implements Realm {
     public String getName() {
         return "MyRealm1";
     }
-
     /**
      * 判断此Realm是否支持token
      * @param authenticationToken

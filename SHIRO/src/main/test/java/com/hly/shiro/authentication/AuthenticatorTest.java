@@ -23,7 +23,7 @@ public class AuthenticatorTest {
 
 
     /**
-     * 所有的身份认证都通过
+     * 所有的身份认证都通过则成功
      */
     @Test
     public void testAllSuccessfulStrategyWithSuccess() {
@@ -77,7 +77,6 @@ public class AuthenticatorTest {
         Factory<SecurityManager> factory = new IniSecurityManagerFactory(iniConfig);
         //2.获取SecurityManager绑定到SecurityUtils，全局设置，设置一次即可
         SecurityManager securityManager = factory.getInstance();
-
         SecurityUtils.setSecurityManager(securityManager);
         //3.得到Subject绑定到当前线程
         Subject subject = SecurityUtils.getSubject();
