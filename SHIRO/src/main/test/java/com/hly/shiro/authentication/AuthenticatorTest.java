@@ -74,7 +74,7 @@ public class AuthenticatorTest {
     private void iniConfig(String iniConfig) {
 
         //1.指定ini文件创建Security1Manager工厂
-        Factory<SecurityManager> factory = new IniSecurityManagerFactory(iniConfig);
+        Factory <SecurityManager> factory = new IniSecurityManagerFactory(iniConfig);
         //2.获取SecurityManager绑定到SecurityUtils，全局设置，设置一次即可
         SecurityManager securityManager = factory.getInstance();
         SecurityUtils.setSecurityManager(securityManager);
