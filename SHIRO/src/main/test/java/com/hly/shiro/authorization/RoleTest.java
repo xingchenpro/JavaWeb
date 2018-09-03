@@ -26,7 +26,6 @@ public class RoleTest {
 
     @Test
     public  void testHasRole(){
-
         iniConfig("classpath:shiro/authorization/shiro-role.ini","hly","123");
         Assert.assertTrue(subject().hasRole("role1"));
         Assert.assertTrue(subject().hasAllRoles(Arrays.asList("role1", "role2")));

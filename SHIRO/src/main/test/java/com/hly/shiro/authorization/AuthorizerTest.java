@@ -26,15 +26,11 @@ public class AuthorizerTest {
         //判断拥有权限
         Assert.assertTrue(subject().isPermitted("user1:update"));
         Assert.assertTrue(subject().isPermitted("user2:update"));
-        Assert.assertTrue(subject().isPermitted("user1+2"));
-        Assert.assertTrue(subject().isPermitted("user1+8"));
-        Assert.assertTrue(subject().isPermitted("user2+10"));
-        Assert.assertTrue(subject().isPermitted("user1+4"));
+        Assert.assertTrue(subject().isPermitted("+user1+2"));
+        Assert.assertTrue(subject().isPermitted("+user1+8"));
+        Assert.assertTrue(subject().isPermitted("+user2+10"));
+        Assert.assertTrue(subject().isPermitted("+user1+4"));
         Assert.assertTrue(subject().isPermitted("menu:view"));
-
-
-
-
 
     }
 
