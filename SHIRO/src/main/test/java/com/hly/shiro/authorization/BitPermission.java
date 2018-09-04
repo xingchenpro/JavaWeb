@@ -43,22 +43,27 @@ public class BitPermission implements Permission {
         //split(String regex) \\+同+
         String[] array = permissionString.split("\\+");
 
+        //+user+1
         if(array.length>1){
             resourceIdentify = array[1];
         }
 
+        //无资源匹配
         if(StringUtils.isEmpty(resourceIdentify)){
             resourceIdentify = "*";
         }
 
+        //+user+1+1
         if(array.length>2){
             permissionBit = Integer.valueOf(array[2]);
         }
 
+        //+user+1+1+1
         if(array.length>3){
             instanceId= array[3];
         }
 
+        //无实例ID
         if(StringUtils.isEmpty(instanceId)) {
             instanceId = "*";
         }

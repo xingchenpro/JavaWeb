@@ -24,16 +24,18 @@ public class AuthorizerTest {
     public void testAuthorizerTest(){
         iniConfig("classpath:shiro/authorization/shiro-authorizer.ini","hly","123");
         //判断拥有权限
-        Assert.assertTrue(subject().isPermitted("user1:update"));
-        Assert.assertTrue(subject().isPermitted("user2:update"));
+        Assert.assertTrue(subject().hasRole("role1"));
+        Assert.assertTrue(subject().hasRole("role2"));
+        Assert.assertTrue(subject().isPermitted("user1:delete"));
+        Assert.assertTrue(subject().isPermitted("user2:view"));
         Assert.assertTrue(subject().isPermitted("+user1+2"));
         Assert.assertTrue(subject().isPermitted("+user1+8"));
         Assert.assertTrue(subject().isPermitted("+user2+10"));
+        Assert.assertTrue(subject().isPermitted("+user1+10+1+1"));
         Assert.assertTrue(subject().isPermitted("+user1+4"));
         Assert.assertTrue(subject().isPermitted("menu:view"));
 
     }
-
 
 
     private void iniConfig(String iniConfig,String username,String password) {
