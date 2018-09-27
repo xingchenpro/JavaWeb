@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Hadoop" />
         <module name="Java" />
+        <module name="JSP" />
+        <module name="JSTL" />
         <module name="MyJSP" />
         <module name="MyJSTL" />
         <module name="Netty" />

@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="MyJSP:war exploded">
-    <output-path>$PROJECT_DIR$/MyJSP/target/MyJSP</output-path>
+  <artifact type="exploded-war" name="JSP:war exploded">
+    <output-path>$PROJECT_DIR$/JSP/target/JSP</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="MyJSP" />
+          <element id="module-output" name="JSP" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
@@ -60,9 +60,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/MyJSP/target/MyJSP/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/JSP/target/JSP/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="MyJSP/web/Web" />
+      <element id="javaee-facet-resources" facet="JSP/web/Web" />
     </root>
   </artifact>
 </component>

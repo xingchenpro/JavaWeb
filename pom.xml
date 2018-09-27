@@ -13,8 +13,8 @@
       <module>Servlet</module>
     <module>Hadoop</module>
 
-    <module>MyJSTL</module>
-    <module>MyJSP</module>
+    <module>JSTL</module>
+    <module>JSP</module>
 
 
   </modules>

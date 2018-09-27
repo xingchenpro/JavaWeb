@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="MyJSTL:war">
-    <output-path>$PROJECT_DIR$/MyJSTL/target</output-path>
-    <root id="archive" name="MyJSTL.war">
-      <element id="artifact" artifact-name="MyJSTL:war exploded" />
-    </root>
-  </artifact>
-</component>
