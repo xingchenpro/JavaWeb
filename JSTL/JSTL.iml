@@ -19,6 +19,7 @@
     <output url="file://$MODULE_DIR$/../MyJSTL/target/classes" />
     <output-test url="file://$MODULE_DIR$/../MyJSTL/target/test-classes" />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/../MyJSTL/target" />
     </content>
     <orderEntry type="inheritedJdk" />

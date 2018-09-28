@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Hadoop" />
         <module name="Java" />
+        <module name="JPA" />
         <module name="JSP" />
         <module name="JSTL" />
         <module name="MyJSP" />
@@ -21,6 +22,7 @@
       <module name="Hadoop" target="1.7" />
       <module name="Java" target="1.7" />
       <module name="JavaFramework" target="1.7" />
+      <module name="JPA" target="1.7" />
       <module name="JSP" target="1.7" />
       <module name="JSTL" target="1.7" />
       <module name="MyJSP" target="1.7" />
