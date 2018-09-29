@@ -1,4 +1,4 @@
-package com.hly.jpa.model;
+package com.hly.jpa.model.oneToOne;
 
 import javax.persistence.*;
 
@@ -53,6 +53,14 @@ public class User {
         this.password = password;
     }
 
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -63,9 +71,9 @@ public class User {
     }
 
     /**
-     * persist()之前调用
+     * 声明周期测试，persist()之前调用
      */
-    @PrePersist
+    /*@PrePersist
     void beforePersist(){
         System.err.println("beforePersist...");
     }
@@ -73,5 +81,5 @@ public class User {
     @PostPersist
     void afterPersist(){
         System.err.println("afterPersist...");
-    }
+    }*/
 }

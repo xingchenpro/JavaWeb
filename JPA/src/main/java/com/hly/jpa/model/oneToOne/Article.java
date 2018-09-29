@@ -1,4 +1,4 @@
-package com.hly.jpa.model;
+package com.hly.jpa.model.oneToOne;
 
 import javax.persistence.*;
 
@@ -21,6 +21,10 @@ public class Article  {
     private String aricleName;
     @Column
     private String aricleContent;
+    //双向一对一
+    //todo mappedBy ="article"由article所属的类user维护关系，负责User外键articleId的更新
+    @OneToOne(optional = false,cascade = CascadeType.ALL,mappedBy ="article" )
+    private User user;
 
     public int getAricleId() {
         return aricleId;
@@ -44,6 +48,14 @@ public class Article  {
 
     public void setAricleContent(String aricleContent) {
         this.aricleContent = aricleContent;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
