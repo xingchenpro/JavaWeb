@@ -1,6 +1,6 @@
 package com.hly.jpa.repository;
 
-import com.hly.jpa.model.oneToOne.User;
+import com.hly.jpa.model.oneToOneOfSingle.User;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;

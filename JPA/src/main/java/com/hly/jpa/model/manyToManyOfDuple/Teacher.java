@@ -18,7 +18,6 @@ public class Teacher {
     private int id;
     private String name;
 
-
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinTable(name = "teaching",joinColumns = {@JoinColumn(name = "teacherId",referencedColumnName = "id")},
             inverseJoinColumns ={@JoinColumn(name = "classesId",referencedColumnName = "id")} )

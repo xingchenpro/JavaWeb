@@ -1,4 +1,4 @@
-package com.hly.jpa.model.onToManyByTable;
+package com.hly.jpa.model.oneToManyByTableOfSingle;
 
 /**
  * @author :hly

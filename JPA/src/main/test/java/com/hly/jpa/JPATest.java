@@ -4,14 +4,14 @@ import com.hly.jpa.model.manyToManyOfDuple.Classes;
 import com.hly.jpa.model.manyToManyOfDuple.Teacher;
 import com.hly.jpa.model.manyToManyOfSingle.Course;
 import com.hly.jpa.model.manyToManyOfSingle.Student;
-import com.hly.jpa.model.manyToOne.Car;
-import com.hly.jpa.model.manyToOne.People;
-import com.hly.jpa.model.onToManyByTable.Author;
-import com.hly.jpa.model.onToManyByTable.Book;
-import com.hly.jpa.model.oneToManyByForeignKeyLink.Boss;
-import com.hly.jpa.model.oneToManyByForeignKeyLink.Employee;
-import com.hly.jpa.model.oneToOne.Article;
-import com.hly.jpa.model.oneToOne.User;
+import com.hly.jpa.model.manyToOneOfSingle.Car;
+import com.hly.jpa.model.manyToOneOfSingle.People;
+import com.hly.jpa.model.oneToManyByTableOfSingle.Author;
+import com.hly.jpa.model.oneToManyByTableOfSingle.Book;
+import com.hly.jpa.model.oneToManyByForeignKeyLinkOfDuple.Boss;
+import com.hly.jpa.model.oneToManyByForeignKeyLinkOfDuple.Employee;
+import com.hly.jpa.model.oneToOneOfSingle.Article;
+import com.hly.jpa.model.oneToOneOfSingle.User;
 import com.hly.jpa.repository.UserDaoBean;
 import org.junit.Test;
 
@@ -93,7 +93,7 @@ public class JPATest {
     }
 
     /**
-     * todo 双向一对多关系OneToMany外键关联方式实现
+     * 双向一对多关系OneToMany外键关联方式实现
      */
     @Test
     public void testOneToManyForeignKeyLink(){
@@ -107,15 +107,18 @@ public class JPATest {
         Employee employee2 = new Employee();
         employee1.setName("aff");
         employee2.setName("gbd");
-        Collection<Employee> collection = new ArrayList<>();
+        Collection<Employee> collection = new ArrayList<Employee>();
         collection.add(employee1);
         collection.add(employee2);
         boss.setEmployees(collection);
+        employee1.setBoss(boss);
+        employee2.setBoss(boss);
         em.persist(boss);
+        em.persist(employee1);
+        em.persist(employee2);
         em.getTransaction().commit();
         em.close();
         entityManagerFactory.close();
-
     }
 
     /**
@@ -142,7 +145,7 @@ public class JPATest {
     }
 
     /**
-     * 单向多对多ManyToMany
+     * 单向多对多关系ManyToMany
      */
     @Test
     public void manyToManyOfSingleTrack(){

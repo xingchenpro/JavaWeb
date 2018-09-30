@@ -1,6 +1,7 @@
-package com.hly.jpa.model.oneToManyByForeignKeyLink;
+package com.hly.jpa.model.oneToManyByForeignKeyLinkOfDuple;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -14,13 +15,12 @@ public class Boss {
 
     @Id
     @GeneratedValue
-    //取消自增
     private int id;
     private String name;
 
     //mappedBy:Boss类为多方关系维护方，负责数据库外键boss_id的更新
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "boss")
-    private Collection<Employee> employees;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "boss")
+    private Collection<Employee> employees = new ArrayList<Employee>();
 
     public int getId() {
         return id;

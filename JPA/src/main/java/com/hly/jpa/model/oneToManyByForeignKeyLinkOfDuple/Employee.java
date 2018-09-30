@@ -1,4 +1,4 @@
-package com.hly.jpa.model.manyToOne;
+package com.hly.jpa.model.oneToManyByForeignKeyLinkOfDuple;
 
 import javax.persistence.*;
 
@@ -9,15 +9,18 @@ import javax.persistence.*;
  * @date :2018/9/29
  */
 @Entity
-public class Car {
+public class Employee {
 
     @Id
     @GeneratedValue
     private int id;
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private People people;
+    //多方设置指向一方的主键
+    //todo 外键为null
+    @ManyToOne
+    @JoinColumn(name = "bossId")
+    private Boss boss;
 
     public int getId() {
         return id;
@@ -35,11 +38,11 @@ public class Car {
         this.name = name;
     }
 
-    public People getPeople() {
-        return people;
+    public Boss getBoss() {
+        return boss;
     }
 
-    public void setPeople(People people) {
-        this.people = people;
+    public void setBoss(Boss boss) {
+        this.boss = boss;
     }
 }

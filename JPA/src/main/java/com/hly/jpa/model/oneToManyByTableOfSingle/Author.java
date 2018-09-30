@@ -1,4 +1,4 @@
-package com.hly.jpa.model.onToManyByTable;
+package com.hly.jpa.model.oneToManyByTableOfSingle;
 
 import javax.persistence.*;
 import java.util.Collection;

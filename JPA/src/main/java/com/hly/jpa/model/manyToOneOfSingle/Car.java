@@ -1,4 +1,4 @@
-package com.hly.jpa.model.oneToManyByForeignKeyLink;
+package com.hly.jpa.model.manyToOneOfSingle;
 
 import javax.persistence.*;
 
@@ -9,16 +9,15 @@ import javax.persistence.*;
  * @date :2018/9/29
  */
 @Entity
-public class Employee {
+public class Car {
 
     @Id
     @GeneratedValue
     private int id;
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "boss_id")
-    private Boss boss;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private People people;
 
     public int getId() {
         return id;
@@ -36,11 +35,11 @@ public class Employee {
         this.name = name;
     }
 
-    public Boss getBoss() {
-        return boss;
+    public People getPeople() {
+        return people;
     }
 
-    public void setBoss(Boss boss) {
-        this.boss = boss;
+    public void setPeople(People people) {
+        this.people = people;
     }
 }

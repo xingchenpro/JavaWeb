@@ -11,7 +11,6 @@ package com.hly.jpa.model.manyToManyOfSingle;
  * 学生与课程单向多对多
  */
 
-
 public class SelectCourse {
 
     private int studentId;

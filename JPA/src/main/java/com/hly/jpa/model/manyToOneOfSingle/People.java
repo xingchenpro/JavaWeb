@@ -1,4 +1,4 @@
-package com.hly.jpa.model.manyToOne;
+package com.hly.jpa.model.manyToOneOfSingle;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,7 +33,5 @@ public class People {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
 }

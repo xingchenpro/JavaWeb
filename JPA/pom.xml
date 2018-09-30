@@ -24,7 +24,6 @@
         <hibernate.version>5.2.17.Final</hibernate.version>
         <goda.time.version>2.9.9</goda.time.version>
     </properties>
-
     <dependencies>
 
         <dependency>

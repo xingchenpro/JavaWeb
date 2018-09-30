@@ -1,14 +1,12 @@
-package com.hly.jpa.model.oneToOne;
+package com.hly.jpa.model.oneToOneOfSingle;
 
 import javax.persistence.*;
-
 /**
  * @author :hly
  * @github :github.com/SiriusHly
  * @blog :blog.csdn.net/Sirius_hly
  * @date :2018/9/27
  */
-
 @Entity
 //指定表名，指定唯一约束
 @Table(name = "user",uniqueConstraints = {@UniqueConstraint(columnNames = {"id","name"})})
@@ -59,15 +57,6 @@ public class User {
 
     public void setArticle(Article article) {
         this.article = article;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                '}';
     }
 
     /**
