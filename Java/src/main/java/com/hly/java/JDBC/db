@@ -1,3 +1,6 @@
+
+二:
+
 CREATE DATABASE testDB;
 
 CREATE TABLE `department` (
@@ -16,3 +19,50 @@ CREATE TABLE `employee` (
   KEY `department_id` (`department_id`),
   CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+
+三：
+
+1.
+delimiter $$后按Enter键，将MySQL语句分隔符设置为$$
+
+delimiter是MySQL中的命令，用于设置SQL语句分隔符。默认情况下;（分号）为SQL语句的分隔符。在命令行客户端中，如果有一行命令以分号结束，那么回车后，mysql将会执行该命令。有时候可能输入较多的语句，且语句中包含有分号，因此使用delimiter设置分隔符为$$，表示当$$之前的多条语句一起执行。
+
+2.CREATE DEFINER=`root`@`localhost` PROCEDURE `getEmployeeNameById`(
+  IN `employeeId` int,OUT `employeeName` varchar(50))
+  BEGIN
+  SELECT `name` INTO employeeName FROM `employee` WHERE id = employeeId;
+  END$$
+
+3.delimiter ; 设置分隔符为;
+
+4.show PROCEDURE status;查看创建的存储过程。
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `sex` char(4) DEFAULT NULL,
+  `birthday` varchar(50) DEFAULT NULL,
+  `money` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into employee(name,department_id) values('Mike',1);
+insert into employee(name,department_id) values('Alice',2);
+insert into employee(name,department_id) values('Hohn',1);
+
+insert into user values(1,'huangliangyun','man','1997-02-28 23:55:00',10000000);
+insert into user values(2,'admin','man','1997-02-28 23:55:00',10000000);
+
+四.
+
+1.MySQL系统事务隔离级别、当前会话隔离级别、当前会话隔离级别。
+
+SELECT @@global.tx_isolation;
+SELECT @@session.tx_isolation;
+SELECT @@tx_isolation;
+
+2.设置MySQL会话事务隔离级别为可重复读。
+set @@session.tx_isolation='Repeatable-Read';
+
+3.设置MySQL系统隔离级别,事务隔离级别为可重复读。
