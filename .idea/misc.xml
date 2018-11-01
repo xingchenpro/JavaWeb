@@ -12,8 +12,10 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Hadoop/pom.xml" />
         <option value="$PROJECT_DIR$/JSP/pom.xml" />
         <option value="$PROJECT_DIR$/JSTL/pom.xml" />
+        <option value="$PROJECT_DIR$/Netty/pom.xml" />
         <option value="$PROJECT_DIR$/t/pom.xml" />
       </set>
     </option>

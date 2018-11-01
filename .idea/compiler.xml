@@ -6,14 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Hadoop" />
         <module name="Java" />
         <module name="JPA" />
         <module name="JSP" />
         <module name="JSTL" />
         <module name="MyJSP" />
         <module name="MyJSTL" />
-        <module name="Netty" />
         <module name="Servlet" />
         <module name="SHIRO" />
       </profile>

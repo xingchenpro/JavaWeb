@@ -8,10 +8,8 @@
     <artifactId>JavaFramework</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Netty</module>
         <module>Java</module>
         <module>Servlet</module>
-        <module>Hadoop</module>
         <module>JSTL</module>
         <module>JSP</module>
         <module>JPA</module>
