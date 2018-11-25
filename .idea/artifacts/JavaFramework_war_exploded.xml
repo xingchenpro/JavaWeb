@@ -4,13 +4,13 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="JavaFramework" />
+          <element id="module-output" name="JavaWeb" />
         </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/JavaFramework/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="JavaFramework/web/Web" />
+      <element id="javaee-facet-resources" facet="JavaWeb/web/Web" />
     </root>
   </artifact>
 </component>
