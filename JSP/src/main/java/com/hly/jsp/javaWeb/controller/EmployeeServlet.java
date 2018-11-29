@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.List;
-
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -28,7 +27,7 @@ public class EmployeeServlet extends HttpServlet {
         doGet(request, response);
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/html;charset=utf-8");
         String url = request.getRequestURI();
         String methodName = url.substring(url.lastIndexOf("/")+1, url.lastIndexOf("."));
@@ -39,41 +38,55 @@ public class EmployeeServlet extends HttpServlet {
             // 执行方法
             method.invoke(this, request, response);
         } catch (Exception e) {
-            throw new RuntimeException("调用方法出错！");
+            throw new RuntimeException("调用方法出错");
         }
     }
 
-    //具体方法
-
-    public void addEmp(HttpServletRequest request, HttpServletResponse response) {
-
-
+    //增加
+    public void addEmp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Employee employee = new Employee();
+        employee.setName(request.getParameter("addName"));
+        employee.setNote(request.getParameter("addNote"));
+        EmployeeDao employeeDao = new EmployeeDaoImpl();
+        employeeDao.add(employee);
+        selectAllEmp(request,response);
     }
 
+    //查找全部
     public void selectAllEmp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EmployeeDao employeeDao = new EmployeeDaoImpl();
         List<Employee> list = employeeDao.selectAll();
         request.setAttribute("list", list);
         request.getRequestDispatcher("/javaWeb/manage/main.jsp").forward(request, response);
-
     }
 
+    //模糊查询
     public void selectByEmpName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("selectName");
-        System.err.println("name"+name);
         EmployeeDao employeeDao = new EmployeeDaoImpl();
         List<Employee> list = employeeDao.query(name);
+        System.err.println("list："+list);
         request.setAttribute("list", list);
         request.getRequestDispatcher("/javaWeb/manage/main.jsp").forward(request, response);
-
     }
 
-    public void updateEmp(HttpServletRequest request, HttpServletResponse response) {
-
+    //更新数据
+    public void updateEmp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Employee employee = new Employee();
+        employee.setId(Integer.parseInt(request.getParameter("updateId")));
+        employee.setName(request.getParameter("updateName"));
+        employee.setNote(request.getParameter("updateNote"));
+        System.err.println(employee);
+        EmployeeDao employeeDao = new EmployeeDaoImpl();
+        employeeDao.update(employee);
+        selectAllEmp(request,response);
     }
 
-    public void deleteEmp(HttpServletRequest request, HttpServletResponse response) {
-
+    //删除
+    public void deleteEmp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String deleteId = request.getParameter("deleteId");
+        EmployeeDao employeeDao = new EmployeeDaoImpl();
+        employeeDao.delete(Integer.parseInt(deleteId));
+        selectAllEmp(request,response);
     }
-
 }

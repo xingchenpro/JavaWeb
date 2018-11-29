@@ -11,6 +11,9 @@ public class Employee {
     private String name;
     private String note;
 
+    public Employee() {
+    }
+
     public int getId() {
         return id;
     }
@@ -33,5 +36,14 @@ public class Employee {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", note='" + note + '\'' +
+                '}';
     }
 }

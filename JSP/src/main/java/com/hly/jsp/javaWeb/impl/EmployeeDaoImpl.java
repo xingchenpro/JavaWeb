@@ -71,7 +71,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
         try {
             Connection con = DBConnection.getConnection();
-            String sql = "select id,name,note from employee where name = ?";
+            String sql = "select id,name,note from employee where name like ?";
             PreparedStatement ps = con.prepareStatement(sql);
             //模糊查询
             ps.setString(1,"%"+name+"%");
@@ -97,7 +97,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
         try {
             Connection con = DBConnection.getConnection();
-            String sql = "update employee set name = ?,set note = ? where id = ?";
+            String sql = "update employee set name = ?,note = ? where id = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,employee.getName());
             ps.setString(2,employee.getNote());

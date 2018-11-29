@@ -16,9 +16,6 @@ public class DBConnection {
     private static final String password = "roof";
     private static Connection connection = null;
 
-    private DBConnection() {
-    }
-
     /*static {
         try {
             Class.forName(driverName);
@@ -62,6 +59,4 @@ public class DBConnection {
             }
         }
     }
-
-
 }
