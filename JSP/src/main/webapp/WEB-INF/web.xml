@@ -28,10 +28,10 @@
         <url-pattern>/MyHttpServlet</url-pattern>
     </servlet-mapping>-->
 
-    <error-page>
+    <!--<error-page>
         <error-code>404</error-code>
         <location>/ErrorPage</location>
-    </error-page>
+    </error-page>-->
 
 
 

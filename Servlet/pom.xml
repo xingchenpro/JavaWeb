@@ -35,7 +35,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.0.1</version>
-
+            <scope>provided</scope> <!-- 编译时不需要发布,否则在集成maven的tomcat插件会出现错误 -->
         </dependency>
 
     </dependencies>
