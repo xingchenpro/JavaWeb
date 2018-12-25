@@ -1,38 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
-<display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
 
     <!-- filter-mapping 元素的顺序决定了 Web 容器应用过滤器到 Servlet 的顺序。-->
-    <filter>
-        <filter-name>LoginFilter</filter-name>
-        <filter-class>com.hly.jsp.filter.LoginFilter</filter-class>
-        <init-param>
-            <param-name>user</param-name>
-            <param-value>hly</param-value>
-        </init-param>
-    </filter>
+    <!--
+        <filter>
+            <filter-name>LoginFilter</filter-name>
+            <filter-class>com.hly.jsp.filter.LoginFilter</filter-class>
+            <init-param>
+                <param-name>user</param-name>
+                <param-value>hly</param-value>
+            </init-param>
+        </filter>
 
-    <filter-mapping>
-        <filter-name>LoginFilter</filter-name>
-        <url-pattern>/MyServlet</url-pattern>
-    </filter-mapping>
+        <filter-mapping>
+            <filter-name>LoginFilter</filter-name>
+            <url-pattern>/MyServlet</url-pattern>
+        </filter-mapping>
+    -->
 
-   <!-- <servlet>
-        <servlet-name>MyHttpServlet</servlet-name>
-        <servlet-class>com.hly.jsp.servlet.MyHttpServlet</servlet-class>
-    </servlet>
+    <!-- <servlet>
+         <servlet-name>MyHttpServlet</servlet-name>
+         <servlet-class>com.hly.jsp.servlet.MyHttpServlet</servlet-class>
+     </servlet>
 
-    <servlet-mapping>
-        <servlet-name>MyHttpServlet</servlet-name>
-
-        <url-pattern>/MyHttpServlet</url-pattern>
-    </servlet-mapping>-->
+     <servlet-mapping>
+         <servlet-name>MyHttpServlet</servlet-name>
+         <url-pattern>/MyHttpServlet</url-pattern>
+     </servlet-mapping>-->
 
     <!--<error-page>
         <error-code>404</error-code>
         <location>/ErrorPage</location>
     </error-page>-->
 
+    <!--实验十-->
+
+    <!--
+      <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>filter.MyFilter</filter-class>
+      </filter>
+      <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/exp_10/index.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+      </filter-mapping>
+      <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/exp_10/another.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+      </filter-mapping>
+      -->
 
 
 </web-app>
