@@ -22,7 +22,7 @@
       <module name="JavaFramework" target="1.7" />
       <module name="JavaWeb" target="1.7" />
       <module name="JPA" target="1.7" />
-      <module name="JSP" target="1.7" />
+      <module name="JSP" target="1.8" />
       <module name="JSTL" target="1.7" />
       <module name="MyJSP" target="1.7" />
       <module name="MyJSTL" target="1.7" />
